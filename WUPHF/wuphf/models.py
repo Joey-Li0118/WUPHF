@@ -23,7 +23,13 @@ class Wuphf(models.Model):
     message = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     def __str__(self):
-        return f"{self.sender.username} - {self.message[:50]}" 
+        listofreceiver = ""
+        sender_username = self.sender.username if self.sender else "Unknown Sender"
+        message_preview = self.message[:50] if self.message else "[No Message]"
+        for receiver in self.receivers.all():
+            if receiver.email: 
+                listofreceiver += (receiver.email + ", ")
+        return f"{self.sender.username} - {self.message[:50]} - {listofreceiver}" 
     def send_wuphf(self):
         for receiver in self.receivers.all():  # Get all related receivers
             if receiver.email:

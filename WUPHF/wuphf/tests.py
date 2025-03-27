@@ -11,7 +11,7 @@ class WuphfTestCase(TestCase):
         self.receiver2 = WuphfReceiver.objects.create(name="Receiver Two", email="receiver2@example.com")
         
         # Create a Wuphf with receivers
-        self.wuphf = Wuphf.objects.create(sender=self.user, message="Test message")
+        self.wuphf = Wuphf.objects.create(sender=self.user, message= "Test message")
         self.wuphf.receivers.add(self.receiver1, self.receiver2)  # Add receivers
 
     @patch("wuphf.utils.notify.sendEmail")  # Mock sendEmail function
