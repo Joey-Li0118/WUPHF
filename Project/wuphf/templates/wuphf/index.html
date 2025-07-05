@@ -1,0 +1,10 @@
+{% comment %} {% if latest_question_list %} 
+<!--the latest_question list here is actually the dictionary name which later gets accessed by the index function in view-->
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %} {% endcomment %}
