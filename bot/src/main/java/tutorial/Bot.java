@@ -43,3 +43,6 @@ public class Bot extends TelegramLongPollingBot {
     }
   }
 }
+
+//mvn compile,  mvn exec:java -Dexec.mainClass="tutorial.Main"    
+// yoyo

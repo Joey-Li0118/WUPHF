@@ -22,6 +22,8 @@ urlpatterns = [
     #Whenever Django encounters include(), it chops off whatever part of the 
     #URL matched up to that point and sends the remaining string to the included URLconf for further processing.
     path("admin/", admin.site.urls),
-    
+    # Add Django site authentication urls (for login, logout, password management)
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
+
 
