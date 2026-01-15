@@ -1,4 +1,4 @@
-package tutorial;
+package wuphf;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -44,5 +44,5 @@ public class Bot extends TelegramLongPollingBot {
   }
 }
 
-//mvn compile,  mvn exec:java -Dexec.mainClass="tutorial.Main"    
-// yoyo
+// mvn compile
+// mvn exec:java -Dexec.mainClass="wuphf.Main"

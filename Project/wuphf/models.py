@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User #makes a user 
 from .utils import notify
 
-
+# Oh i see whats happening here a little bit 
 class WuphfReceiver(models.Model):
     name = models.CharField(max_length=50)
     sms = models.CharField(max_length=20, null=True, blank=True)
@@ -16,6 +16,8 @@ class WuphfReceiver(models.Model):
     def socials(self):
         return [self.sms, self.facebook, self.twitter, self.email]
     # Receivers: [Dwight, Jim, Pam]
+# Every calss is an entity in the database table 
+
 
 class Wuphf(models.Model):
     sender = models.ForeignKey(User, on_delete = models.CASCADE, related_name = "sendingnotif")
@@ -33,7 +35,7 @@ class Wuphf(models.Model):
             if receiver.email:
                 notify.sendEmail(receiver.email, self.message)  # Access email field of each receiver
             if receiver.sms:
-                print("phone_message...")
+                print("phone_message...") 
             if receiver.facebook:
                 print("Facebook messaging...")
             if receiver.twitter:
